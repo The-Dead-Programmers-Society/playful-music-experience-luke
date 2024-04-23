@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqubib4lunx8p"]
+
+[ext_resource type="Texture2D" uid="uid://bgl4j13r7wkrh" path="res://kisspng-bodhrn-drum-heads-hand-drums-tom-toms-5ba28d864fa359.7117365715373797183262.png" id="1_3438v"]
+[ext_resource type="Script" path="res://Music.gd" id="1_gj1dv"]
+[ext_resource type="Texture2D" uid="uid://bsbjeq1yo1hs3" path="res://Stick (Bodhran).png" id="2_x388m"]
+[ext_resource type="AudioStream" uid="uid://cnnitf5v33ptb" path="res://Sound Effects/Drum.mp3" id="3_hs6s0"]
+[ext_resource type="AudioStream" uid="uid://6crw6jmvb873" path="res://Sound Effects/Stick.mp3" id="5_och0x"]
+
+[node name="Bodhran" type="Node2D"]
+script = ExtResource("1_gj1dv")
+
+[node name="Bodhran" type="Sprite2D" parent="."]
+position = Vector2(288, 213)
+scale = Vector2(0.483813, 0.483813)
+texture = ExtResource("1_3438v")
+
+[node name="Button" type="Button" parent="Bodhran"]
+offset_left = -229.0
+offset_top = -310.0
+offset_right = 306.0
+offset_bottom = 287.0
+
+[node name="Drum" type="AudioStreamPlayer2D" parent="Bodhran"]
+position = Vector2(-595.271, -440.253)
+scale = Vector2(2.06691, 2.06691)
+stream = ExtResource("3_hs6s0")
+volume_db = 4.0
+
+[node name="Stick(bodhran)" type="Sprite2D" parent="."]
+position = Vector2(310, 520)
+scale = Vector2(0.246939, 0.246939)
+texture = ExtResource("2_x388m")
+
+[node name="Button2" type="Button" parent="Stick(bodhran)"]
+offset_left = -437.0
+offset_top = -381.0
+offset_right = 433.0
+offset_bottom = 324.0
+
+[node name="Stick" type="AudioStreamPlayer2D" parent="Stick(bodhran)"]
+stream = ExtResource("5_och0x")
+volume_db = 4.0
+
+[connection signal="pressed" from="Bodhran/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Stick(bodhran)/Button2" to="." method="_on_button_2_pressed"]
