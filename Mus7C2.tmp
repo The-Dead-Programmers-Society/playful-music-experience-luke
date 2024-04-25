@@ -23,22 +23,14 @@ position = Vector2(288, 213)
 scale = Vector2(0.483813, 0.483813)
 texture = ExtResource("1_3438v")
 
-[node name="Control" type="Control" parent="Bodhran"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -595.271
-offset_top = -440.253
-offset_right = -555.271
-offset_bottom = -400.253
+[node name="Button" type="Button" parent="Bodhran"]
+offset_left = -229.0
+offset_top = -310.0
+offset_right = 306.0
+offset_bottom = 287.0
 
-[node name="Button" type="Button" parent="Bodhran/Control"]
-offset_left = 366.271
-offset_top = 130.253
-offset_right = 901.271
-offset_bottom = 727.253
-
-[node name="Drum" type="AudioStreamPlayer2D" parent="Bodhran/Control"]
-position = Vector2(0.000315386, -0.000260194)
+[node name="Drum" type="AudioStreamPlayer2D" parent="Bodhran"]
+position = Vector2(-595.271, -440.253)
 scale = Vector2(2.06691, 2.06691)
 stream = ExtResource("3_hs6s0")
 volume_db = 4.0
@@ -76,7 +68,6 @@ stream = ExtResource("8_volgw")
 volume_db = 15.0
 bus = &"Pitch"
 
-[connection signal="pressed" from="Bodhran/Control/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Bodhran/Control/Button" to="Bodhran/Control" method="_on_button_pressed"]
+[connection signal="pressed" from="Bodhran/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Stick(bodhran)/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Harp/Button3" to="." method="_on_button_3_pressed"]
