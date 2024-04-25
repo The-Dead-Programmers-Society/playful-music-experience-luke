@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cnnitf5v33ptb" path="res://Sound Effects/Drum.mp3" id="3_hs6s0"]
 [ext_resource type="AudioStream" uid="uid://6crw6jmvb873" path="res://Sound Effects/Stick.mp3" id="5_och0x"]
 [ext_resource type="Texture2D" uid="uid://b60urirg5aw0v" path="res://Harp.png" id="7_wtxy1"]
-[ext_resource type="AudioStream" uid="uid://cjjwa2tvv5fn6" path="res://Sound Effects/Harp.wav" id="8_volgw"]
+[ext_resource type="AudioStream" uid="uid://utitvafkjhvn" path="res://Sound Effects/Harp.wav" id="8_volgw"]
 
 [node name="Bodhran" type="Node2D"]
 script = ExtResource("1_gj1dv")
@@ -63,7 +63,7 @@ offset_bottom = 381.0
 
 [node name="Harp" type="AudioStreamPlayer2D" parent="Harp"]
 stream = ExtResource("8_volgw")
-volume_db = 4.0
+volume_db = 15.0
 
 [connection signal="pressed" from="Bodhran/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Stick(bodhran)/Button2" to="." method="_on_button_2_pressed"]
