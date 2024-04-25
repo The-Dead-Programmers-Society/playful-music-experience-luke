@@ -1,13 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqubib4lunx8p"]
+[gd_scene load_steps=9 format=3 uid="uid://bqubib4lunx8p"]
 
 [ext_resource type="Texture2D" uid="uid://bgl4j13r7wkrh" path="res://kisspng-bodhrn-drum-heads-hand-drums-tom-toms-5ba28d864fa359.7117365715373797183262.png" id="1_3438v"]
 [ext_resource type="Script" path="res://Music.gd" id="1_gj1dv"]
+[ext_resource type="Texture2D" uid="uid://bwjme0x3lvk14" path="res://Ireland.jpg" id="2_3865t"]
 [ext_resource type="Texture2D" uid="uid://bsbjeq1yo1hs3" path="res://Stick (Bodhran).png" id="2_x388m"]
 [ext_resource type="AudioStream" uid="uid://cnnitf5v33ptb" path="res://Sound Effects/Drum.mp3" id="3_hs6s0"]
 [ext_resource type="AudioStream" uid="uid://6crw6jmvb873" path="res://Sound Effects/Stick.mp3" id="5_och0x"]
+[ext_resource type="Texture2D" uid="uid://b60urirg5aw0v" path="res://Harp.png" id="7_wtxy1"]
+[ext_resource type="AudioStream" uid="uid://cjjwa2tvv5fn6" path="res://Sound Effects/Harp.wav" id="8_volgw"]
 
 [node name="Bodhran" type="Node2D"]
 script = ExtResource("1_gj1dv")
+
+[node name="Ireland" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 321.75)
+scale = Vector2(1.58242, 1.45281)
+texture = ExtResource("2_3865t")
 
 [node name="Bodhran" type="Sprite2D" parent="."]
 position = Vector2(288, 213)
@@ -41,5 +50,21 @@ offset_bottom = 324.0
 stream = ExtResource("5_och0x")
 volume_db = 4.0
 
+[node name="Harp" type="Sprite2D" parent="."]
+position = Vector2(801, 336)
+scale = Vector2(0.442817, 0.442817)
+texture = ExtResource("7_wtxy1")
+
+[node name="Button3" type="Button" parent="Harp"]
+offset_left = -235.0
+offset_top = -391.0
+offset_right = 232.0
+offset_bottom = 381.0
+
+[node name="Harp" type="AudioStreamPlayer2D" parent="Harp"]
+stream = ExtResource("8_volgw")
+volume_db = 4.0
+
 [connection signal="pressed" from="Bodhran/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Stick(bodhran)/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Harp/Button3" to="." method="_on_button_3_pressed"]

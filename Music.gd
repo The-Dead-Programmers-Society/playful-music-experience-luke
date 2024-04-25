@@ -6,3 +6,6 @@ func _on_button_pressed():
 
 func _on_button_2_pressed():
 	$"Stick(bodhran)/Stick".play()
+	
+func _on_button_3_pressed():
+	$Harp/Harp.play()
