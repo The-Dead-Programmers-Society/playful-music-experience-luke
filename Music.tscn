@@ -32,6 +32,7 @@ offset_right = -555.271
 offset_bottom = -400.253
 
 [node name="Button" type="Button" parent="Bodhran/Control"]
+layout_mode = 0
 offset_left = 366.271
 offset_top = 130.253
 offset_right = 901.271
